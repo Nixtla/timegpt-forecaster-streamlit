@@ -192,12 +192,12 @@ def summarize_forecast_results(data, forecast_results, horizon, X_df, X_df_futur
     )
     fig.add_trace(
         go.Scatter(
-            x=forecast_df['ds'], y=forecast_df['LargeTimeModel'], mode='lines', 
+            x=forecast_df['ds'], y=forecast_df['TimeGPT'], mode='lines', 
             line=dict(color='red'), name='TimeGPT Forecast',
         ),
     )
-    lo = forecast_df[f'LargeTimeModel-lo-{level}'].to_list()
-    hi = forecast_df[f'LargeTimeModel-hi-{level}'].to_list()
+    lo = forecast_df[f'TimeGPT-lo-{level}'].to_list()
+    hi = forecast_df[f'TimeGPT-hi-{level}'].to_list()
     ds = forecast_df['ds'].to_list()
     fig.add_trace(
         go.Scatter(
